@@ -1,4 +1,7 @@
 </div><!--.main-->
 <div id="footer">
-    <img class="avatar" src="{{.Site.BaseURL}}/images/avatar.png">
+    <div class="wrapper">
+        <img class="avatar" src="{{.Site.BaseURL}}/images/avatar.png">
+        {{ .Site.Params.about }}
+    </div>
 </div>

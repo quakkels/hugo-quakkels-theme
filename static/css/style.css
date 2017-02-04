@@ -15,6 +15,10 @@ body {
     padding: 16px;
 }
 
+#footer {
+    padding:16px;
+}
+
 .wrapper {
     margin: 0 auto;
     width: 620px;
@@ -62,6 +66,7 @@ code {
     border-radius: 4px;
     display:inline-block;
     padding: 0 4px;
+    font-size: 0.9em;
 }
 pre code {
     padding: initial;
@@ -123,6 +128,13 @@ pre code {
 #home-header p a {
     display: inline-block;
     padding: 0 8px;
+}
+
+/* footer */
+#footer img {
+    vertical-align: middle;
+    float: right;
+    margin: 0 0 16px 16px;
 }
 
 /* lists */
