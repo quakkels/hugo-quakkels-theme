@@ -1,6 +1,8 @@
 <header id="home-header">
     <h1>{{ .Title }}</h1>
-    <h2>{{ .Date }}</h2>
+    {{ if eq .Section "posts" }}
+    <h2>{{ .Date.Format "Jan, 2, 2006" }}</h2>
+    {{ end }}
     {{ with .Params.tags }}
     {{ if ge (len .) 1 }}
     <p>{{ range . }}
