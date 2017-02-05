@@ -1,7 +1,14 @@
 </div><!--.main-->
 <div id="footer">
     <div class="wrapper">
-        <img class="avatar" src="{{.Site.BaseURL}}/images/avatar.png">
+        <img class="avatar" src="{{.Site.BaseURL}}images/avatar.png">
         {{ .Site.Params.about }}
     </div>
 </div>
+<script src="{{.Site.BaseURL}}js/site.js"></script>
+<script>
+var navElement = document.getElementById("main-nav");
+var menuButton = document.getElementById("hamburger");
+var mobileSize = 768;
+var menu = new Menu(window, navElement, menuButton, mobileSize);
+</script>
