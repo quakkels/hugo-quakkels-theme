@@ -10,5 +10,8 @@
         {{ end }}
     </p>{{ end }}
     {{ end}}
+    {{ if eq .Section "posts" }}
+    <h3>By: {{.Site.Params.name}}</h3>
+    {{ end }}
 </header>
 <div class="main">
