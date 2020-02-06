@@ -1,8 +1,9 @@
 {{ partial "header.html" . }}
 {{ partial "page-header.html" . }}
-<h1 id="title">{{ .Title }}</h1>
+<section class="wrapper">
 {{ .Content }}
 {{ range .Data.Pages }}
     {{ .Render "li"}}
 {{ end }}
+</section>
 {{ partial "footer.html" . }}
