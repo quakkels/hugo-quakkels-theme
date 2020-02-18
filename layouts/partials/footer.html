@@ -1,8 +1,16 @@
 </div><!--.main-->
 <div id="footer">
     <div class="wrapper">
-        <img class="avatar" src="{{.Site.BaseURL}}{{ .Site.Params.avatar }}">
-        {{ .Site.Params.about }}
+
+{{ if not (eq (len $.Site.Taxonomies.tags) 0) }}
+  Check out articles with these tags:
+  <ul class="tags">
+    {{ range $tagname, $taxonomy := $.Site.Taxonomies.tags }}
+      <li><a href="{{ "/tags/" | relLangURL }}{{ $tagname | urlize }}">{{ $tagname }}</a></li>
+    {{ end }}
+  </ul>
+{{ end }}
+
     </div>
 </div>
 <script src="{{.Site.BaseURL}}js/site.js"></script>

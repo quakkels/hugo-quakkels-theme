@@ -1,0 +1,10 @@
+{{ partial "header.html" . }}
+{{ partial "page-header.html" . }}
+<section class="wrapper">
+{{.Content}}
+<p style="text-align: right;">
+    Back to 
+    <a href="{{ .Site.BaseURL }}training_log">Training Log</a>.
+</p>
+</section>
+{{ partial "footer.html" . }}

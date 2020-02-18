@@ -19,12 +19,13 @@
 </head>
 <body lang="en">
 <nav id="main-nav">
+    <a id="branding" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
     <div class="mobile-menu">
-        <!--<img class="avatar" src="{{ .Site.BaseURL }}/images/avatar.png">-->
-        <!--{{ .Site.Params.name }}-->
+        <!--<img class="avatar" src="{{ .Site.BaseURL }}/images/avatar.png">
+        {{ .Site.Params.name }}-->
         <div id="hamburger"><span></span></div>
     </div>
-    <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    <a href="{{ .Site.BaseURL }}">Articles</a>
     <a href="{{ .Site.BaseURL }}projects">Projects</a>
     <a href="{{ .Site.BaseURL }}about">About</a>
     <a href="{{ .Site.BaseURL }}training_log">Training Log</a>
