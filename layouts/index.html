@@ -2,9 +2,10 @@
 {{ partial "home-header.html" . }}
 <section class="wrapper">
 <ul class="home-list">
-  {{ range where .Data.Pages "Section" "posts" }}
+  {{ range where .Site.RegularPages "Section" "posts" }}
   {{ .Render "li"}}
   {{ end }}
 </ul>
+
 </section>
 {{ partial "footer.html" . }}
