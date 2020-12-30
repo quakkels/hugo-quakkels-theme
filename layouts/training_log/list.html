@@ -1,11 +1,15 @@
 {{ partial "header.html" . }}
 {{ partial "page-header.html" . }}
 <section class="wrapper">
+
     <ul class="traininglog-list">
-        {{ range .Data.Pages }}
+        {{ range (.Paginator 10).Pages }}
         {{ .Render "li"}}
         {{ end }}
     </ul>
+
+    {{ template "_internal/pagination.html" . }}
+
     {{ .Content }}
 </section>
 {{ partial "footer.html" . }}
