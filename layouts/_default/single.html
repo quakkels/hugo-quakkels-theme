@@ -2,5 +2,10 @@
 {{ partial "page-header.html" . }}
 <section class="wrapper">
 {{.Content}}
+<div id="sendComments">
+    <div>
+        Thanks for reading. Feel free to send comments to <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>.
+    </div>
+</div>
 </section>
 {{ partial "footer.html" . }}
