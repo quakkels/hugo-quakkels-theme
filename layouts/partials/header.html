@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title"content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
     <meta property="og:description"content="{{ .Description }}" />
-    {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
-    <meta name="description" content="{{ .Site.Params.description }}">
-    {{ .Hugo.Generator }}
 
     <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
     <link rel="shortcut icon" href="{{ .Site.BaseURL }}images/favicon.ico">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
     <base href="{{ .Site.BaseURL }}">
     <link rel="canonical" href="{{ .Permalink }}">
-    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <link href="{{ .Site.BaseURL}}{{ .Site.Params.rss }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
 <body lang="en">
 <nav id="main-nav">
@@ -27,5 +24,5 @@
     <a href="{{ .Site.BaseURL }}projects">Projects</a>
     <a href="{{ .Site.BaseURL }}about">About</a>
     <a href="{{ .Site.BaseURL }}training_log">Training Log</a>
-    <a class="rss" href="{{ .RSSLink }}">RSS Feed</a>
+    <a class="rss" href="{{ .Site.BaseURL}}{{ .Site.Params.rss }}">RSS Feed</a>
 </nav>
