@@ -11,7 +11,11 @@
     </p>{{ end }}
     {{ end}}
     {{ if eq .Section "posts" }}
-    <h3>By: {{.Site.Params.name}}</h3>
+        <h3>By: {{.Site.Params.name}} 
+        </h3>
+        {{ if isset .Params "editor" }}
+            <h3>Edited By: {{ .Params.editor }}</h3>
+        {{ end }}
     {{ end }}
 </header>
 <div class="main">
