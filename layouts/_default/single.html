@@ -2,8 +2,10 @@
 {{ partial "page-header.html" . }}
 <section class="wrapper">
 {{ if isset .Params "image" }}
-<img src="{{ path.Join "/" .Params.image }}" width="100%">
+<img 
+    src="{{ path.Join "/" .Params.image }}" alt="{{.Params.imageAlt}}" width="100%">
 {{ end }}
+
 {{.Content}}
 <div id="sendComments">
     <div>

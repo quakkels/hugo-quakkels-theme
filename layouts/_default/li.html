@@ -2,9 +2,6 @@
     <aside class="dates">{{ .Date.Format "Jan 2, 2006" }}</aside>
     
     <h2><a href='{{ .Permalink }}'>{{ .Title }}</a></h2>
-    {{ if isset .Params "image" }}
-    <img src="{{ path.Join "/" .Params.image }}" width="100%">
-    {{ end }}
     <p>{{ .Description | markdownify }}</p>
     <p>{{ with .Params.tags }}{{ if ge (len .) 1 }}{{ range . }}
     <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
