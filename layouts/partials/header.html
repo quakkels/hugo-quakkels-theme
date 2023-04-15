@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Sharing metadata -->
+    <meta name="robots" content="follow, index, max-snippet:50, max-video-preview:-1, max-image-preview:large"/>
     <meta property="title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
     <meta property="description" content="{{ .Description }}" />
     {{ if isset .Params "image"}}<meta property="og:image" content="{{ path.Join .Site.BaseURL .Params.image }}"> {{ end }}
