@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="{{ .Site.BaseURL }}">
 
     <!-- Sharing metadata -->
     <meta name="robots" content="follow, index, max-snippet:50, max-video-preview:-1, max-image-preview:large"/>
-    <meta property="title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
-    <meta property="description" content="{{ .Description }}" />
-    {{ if isset .Params "image"}}<meta property="og:image" content="{{ path.Join .Site.BaseURL .Params.image }}"> {{ end }}
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
+    <meta property="og:description" content="{{ .Description }}" />
+    {{ if isset .Params "image"}}<meta property="og:image" content="{{ .Site.BaseURL }}{{ path.Join "" .Params.image }}"> {{ end }}
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="{{ .Site.Title }}">
     <meta property="og:url" content="{{ .Permalink }}">
@@ -20,13 +21,12 @@
     <meta name="twitter:site" content="{{ .Site.Title }}">
     <meta name="twitter:title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}">
     <meta name="twitter:description" content="{{ .Description }}">
-    {{ if isset .Params "image"}}<meta name="twitter:image" content="{{ path.Join .Site.BaseURL .Params.image }}">{{ end }}
+    {{ if isset .Params "image"}}<meta name="twitter:image" content="{{ .Site.BaseURL }}{{ path.Join "" .Params.image }}">{{ end }}
 
 
     <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
     <link rel="shortcut icon" href="{{ .Site.BaseURL }}images/favicon.ico">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
-    <base href="{{ .Site.BaseURL }}">
     <link rel="canonical" href="{{ .Permalink }}">
     <link href="{{ .Site.BaseURL}}{{ .Site.Params.rss }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
