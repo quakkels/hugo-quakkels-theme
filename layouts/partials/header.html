@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,7 +7,12 @@
     <base href="{{ .Site.BaseURL }}">
 
     <!-- Sharing metadata -->
-    <meta name="robots" content="follow, index, max-snippet:50, max-video-preview:-1, max-image-preview:large"/>
+    <meta name="robots" content="follow, index"/>    
+    <link rel="canonical" href="{{ .Permalink }}" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+
     <meta property="og:title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
     <meta property="og:description" content="{{ .Description }}" />
     {{ if isset .Params "image"}}<meta property="og:image" content="{{ .Site.BaseURL }}{{ path.Join "" .Params.image }}"> {{ end }}
@@ -36,7 +41,8 @@
     <div class="mobile-menu">
         <div id="hamburger"><span></span></div>
     </div>
-    <a href="{{ .Site.BaseURL }}">Articles</a>
+    <a href="{{ .Site.BaseURL }}subscribe">Subscribe</a>
+    <a href="{{ .Site.BaseURL }}">Posts</a>
     <a href="{{ .Site.BaseURL }}projects">Projects</a>
     <a href="{{ .Site.BaseURL }}about">About</a>
     <a href="{{ .Site.BaseURL }}training_log">Training Log</a>
